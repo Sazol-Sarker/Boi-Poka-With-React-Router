@@ -1,20 +1,16 @@
 import BannerImg from '../../assets/books.jpg'
 const Banner = () => {
   return (
-    <div className="hero bg-base-200 min-h-screen">
+    <div className="hero bg-base-200 border-transparent rounded-lg max-w-6xl h-[554px]">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <img
           src={BannerImg}
-          className="max-w-sm rounded-lg shadow-2xl"
+          className="max-w-sm h-[394px] my-[80px] mr-[80px] rounded-lg shadow-2xl"
         />
-        <div>
-          <h1 className="text-5xl font-bold">Box Office News!</h1>
-          <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
-          </p>
-          <button className="btn btn-primary">Get Started</button>
+        <div className='py-[148px] pl-[110px]'>
+          <h1 className="text-[56px] font-bold">Books to freshen up your bookshelf</h1>
+         
+          <button className="btn btn-primary py-3 mt-5 border-transparent rounded-sm text-white bg-[#23BE0A]">View The List</button>
         </div>
       </div>
     </div>

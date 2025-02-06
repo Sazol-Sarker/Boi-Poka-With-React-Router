@@ -4,13 +4,13 @@ const Navbar = () => {
   const links = (
     <>
       <li>
-        <NavLink to="/" >Home</NavLink>
+        <NavLink to="/" className="border-2 border-[#23BE0A] text-gray-400 bg-white">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/dashboard">Listed Books</NavLink>
+        <NavLink to="/dashboard" className="border-2 border-[#23BE0A] text-gray-400 bg-white">Listed Books</NavLink>
       </li>
       <li>
-        <NavLink to="/pages">Pages to Read</NavLink>
+        <NavLink to="/pages" className="border-2 border-[#23BE0A] text-gray-400 bg-white">Pages to Read</NavLink>
       </li>
     </>
   );
@@ -42,16 +42,22 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-2xl font-bold">Boi Poka</a>
+        <NavLink to="/" id="logoText" className="btn btn-ghost text-[28px] font-bold">Boi Poka</NavLink>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{links}</ul>
+        <ul className="menu menu-horizontal px-1 gap-x-2">{links}</ul>
       </div>
-      {/* <div className="navbar-end">
-        <a className="btn">Sign Up</a>
-      </div> */}
-      <div className="navbar-end">
-        <a className="btn">Sign In</a>
+      <div className="navbar-end flex ml-auto gap-x-2">
+        
+          <NavLink to="" className="btn px-6 text-white bg-[#23BE0A]">
+            Sign In
+          </NavLink>
+       
+        
+          <NavLink to="" className="btn px-6 text-white bg-[#59C6D2]">
+            Sign Up
+          </NavLink>
+        
       </div>
     </div>
   );
