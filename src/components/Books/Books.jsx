@@ -10,7 +10,7 @@ const Books = () => {
         .then(data=>setBooks(data))
     },[])
     return (
-        <div className="m-5">
+        <div className="my-5">
             <h2 className="text-center text-[40px] m-9 font-bold">Books</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-6">
 
