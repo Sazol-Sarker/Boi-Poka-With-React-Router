@@ -23,6 +23,7 @@ const BookDetail = () => {
   } = bookData;
   return (
     <div className="hero bg-base-200 min-h-screen">
+      <title>{`${bookName} | Book Details`}</title>
       <div className="hero-content flex-col lg:flex-row">
         <img
           src={image}
