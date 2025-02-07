@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 const getListFromLSDb = (btn) => {
   const stringItemListFromLSDb = localStorage.getItem(btn);
   console.log(stringItemListFromLSDb);
@@ -19,7 +21,12 @@ const addToLSDb = (id,btn) => {
     itemFromLS.push(id);
     const updatedLSItemList=JSON.stringify(itemFromLS);
     localStorage.setItem(btn,updatedLSItemList);
+    if(btn=="read-list")
+      toast("Book Marked as Read successfully!");
+    else
+      toast("Book Added to Wish List successfully!");
+
   }
 };
 
-export {addToLSDb};
+export {addToLSDb,getListFromLSDb};

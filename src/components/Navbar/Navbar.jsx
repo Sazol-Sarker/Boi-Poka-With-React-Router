@@ -7,7 +7,7 @@ const Navbar = () => {
         <NavLink to="/" className="border-2 border-[#23BE0A] text-gray-400 bg-white">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/dashboard" className="border-2 border-[#23BE0A] text-gray-400 bg-white">Listed Books</NavLink>
+        <NavLink to="/listedBooks" className="border-2 border-[#23BE0A] text-gray-400 bg-white">Listed Books</NavLink>
       </li>
       <li>
         <NavLink to="/pages" className="border-2 border-[#23BE0A] text-gray-400 bg-white">Pages to Read</NavLink>
@@ -54,7 +54,7 @@ const Navbar = () => {
           </NavLink>
        
         
-          <NavLink to="" className="btn px-6 text-white bg-[#59C6D2]">
+          <NavLink to="/dashboard" className="btn px-6 text-white bg-[#59C6D2]">
             Sign Up
           </NavLink>
         

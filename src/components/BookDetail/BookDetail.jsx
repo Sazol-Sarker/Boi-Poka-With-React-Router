@@ -48,24 +48,24 @@ const BookDetail = () => {
 
           <div className="flex  text-lg my-4">
             <div className="mr-8">
-            <p className="">Number of Pages:  </p>
-            <p className=""> Publisher:   </p>
-            <p className=""> Year of Publishing:   </p>
-            <p className="">  Rating: </p>
+            <p >Number of Pages:  </p>
+            <p > Publisher:   </p>
+            <p > Year of Publishing:   </p>
+            <p >  Rating: </p>
   
             </div>
             <div>
 
-            <p className=""> <b>{totalPages}</b> </p>
-            <p className="">  <b>{publisher}</b> </p>
-            <p className=""><b>{yearOfPublishing}</b> </p>
-            <p className=""> <b>{rating}</b> </p>
+            <p> <b>{totalPages}</b> </p>
+            <p>  <b>{publisher}</b> </p>
+            <p><b>{yearOfPublishing}</b> </p>
+            <p> <b>{rating}</b> </p>
             </div>
 
           </div>
 
-          <button onClick={()=>addToLSDb(bookNo,'read-list')} className="btn btn-outline text-black font-bold text-lg mt-3">Read</button>
-          <button onClick={()=>addToLSDb(bookNo,'wish-list')} className="btn btn-accent text-white font-bold text-lg ml-5">Wish List</button>
+          <button onClick={()=>addToLSDb(bookNo,'read-list')} className="btn btn-outline text-black font-bold text-lg mt-3">Mark as Read</button>
+          <button onClick={()=>addToLSDb(bookNo,'wish-list')} className="btn btn-accent text-white font-bold text-lg ml-5">Add to Wish List</button>
         </div>
       </div>
     </div>
