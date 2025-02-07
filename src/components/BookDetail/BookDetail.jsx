@@ -1,4 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import {addToLSDb} from "../../utility/localStorageDbHandler";
 
 const BookDetail = () => {
   const { bookId } = useParams();
@@ -63,8 +64,8 @@ const BookDetail = () => {
 
           </div>
 
-          <button className="btn btn-outline text-black font-bold text-lg mt-3">Read</button>
-          <button className="btn btn-accent text-white font-bold text-lg ml-5">Wish List</button>
+          <button onClick={()=>addToLSDb(bookNo,'read-list')} className="btn btn-outline text-black font-bold text-lg mt-3">Read</button>
+          <button onClick={()=>addToLSDb(bookNo,'wish-list')} className="btn btn-accent text-white font-bold text-lg ml-5">Wish List</button>
         </div>
       </div>
     </div>
