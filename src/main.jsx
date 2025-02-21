@@ -26,6 +26,7 @@ const router = createBrowserRouter([
       {
         path:'/books/:bookId',
         loader:()=>fetch('/booksData.json'),
+        
         element:<BookDetail></BookDetail>
       },
       {
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/listedBooks',
-        loader:()=>fetch('/booksData.json'),
+        loader:()=>fetch('https://boipoka17.surge.sh/booksData.json'),
         element:<ListedBooks></ListedBooks>
       }
       
