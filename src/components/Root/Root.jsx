@@ -1,22 +1,24 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
-import './Root.css'
+import "./Root.css";
 const Root = () => {
   return (
-    <div className="root max-w-6xl mx-auto">
-      <header>
-        <Navbar></Navbar>
-      </header>
-      <main className="">
-      {/* border-4 border-red-500 */}
-        {/* <p>Root outlet body</p> */}
-        <Outlet></Outlet>
-      </main>
+    <>
+    {/* max-w-6xl */}
+      <div className="root w-10/12 mx-auto">
+        <header>
+          <Navbar></Navbar>
+        </header>
+        <main className="">
+         
+          <Outlet></Outlet>
+        </main>
+      </div>
       <footer>
         <Footer></Footer>
       </footer>
-    </div>
+    </>
   );
 };
 

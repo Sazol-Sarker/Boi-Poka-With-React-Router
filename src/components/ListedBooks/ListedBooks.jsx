@@ -44,61 +44,54 @@ const ListedBooks = () => {
   // ratingAscSort
   const ratingAscSort = (pickedOption) => {
     setSortByOption(pickedOption);
-    const updatedBookItemList=[...readBooksList].sort((a,b)=>a.rating-b.rating);
+    const updatedBookItemList = [...readBooksList].sort(
+      (a, b) => a.rating - b.rating
+    );
     setReadBooksList(updatedBookItemList);
-
   };
   //totalPagesAscSort
   const totalPagesAscSort = (pickedOption) => {
     setSortByOption(pickedOption);
-    const updatedBookItemList=[...readBooksList].sort((a,b)=>a.totalPages-b.totalPages);
+    const updatedBookItemList = [...readBooksList].sort(
+      (a, b) => a.totalPages - b.totalPages
+    );
     setReadBooksList(updatedBookItemList);
-
   };
 
   return (
-    <div>
+    <div className="w-full ">
       <title>Book List</title>
       {/* <h2>Books {books.length}</h2> */}
-      <div className="text-3xl flex justify-center items-center border-2 border-transparent m-4 p-4 rounded-2xl font-bold bg-gray-100">
+      <div className="w-full text-xl md:text-2xl lg:text-3xl flex justify-center items-center border-2 border-transparent  py-2 rounded-2xl font-bold bg-gray-100">
         <h1>BOOKS</h1>
       </div>
       {/* drop down : sort by */}
-      <div className="text-3xl flex justify-center items-center border-2 border-transparent m-4 p-4 rounded-2xl font-bold bg-gray-100">
-        <select className="select select-bordered w-full max-w-xs text-white bg-[#23BE0A] text-center text-xl">
-          <option disabled selected>
-            {sortByOption?`Sort By ${sortByOption}`:'Sort By'}
-          </option>
-          <option onClick={()=>ratingAscSort('Rating (Ascending)')}>Rating Asc</option>
-          <option onClick={()=>totalPagesAscSort('Total PAges (Ascending)')}>Total Pages Asc</option>
-        </select>
-      </div>
-
-      {/* 2nd dropdown menu */}
-      <div className="dropdown dropdown-bottom flex justify-center items-center  hover:text-pink-400">
-        <div
-          tabIndex={0}
-          role="button"
-          className="btn m-1 bg-[#23BE0A] text-xl hover:bg-pink-400  text-white "
-        >
-          {sortByOption?`Sort By: ${sortByOption}`:'Sort By'}
-          
-        </div>
-        <ul
-          tabIndex={0}
-          className="dropdown-content menu bg-base-100 rounded-box z-[1] text-md w-52 p-2 shadow border-2 border-pink-300"
-        >
-          <li onClick={() => totalPagesAscSort("Total Pages Ascending")}>
-            <a>Total Pages (Ascending)</a>
-          </li>
-
-          <li
-            onClick={() => ratingAscSort("Rating Ascending")}
-            className="border-t-2 border-pink-400"
+      <div className="text-xl md:text-3xl my-2 md:my-5 flex justify-center items-center border-2 border-transparent  p-4 rounded-2xl font-bold bg-gray-100">
+        {/* 2nd dropdown menu */}
+        <div className="dropdown dropdown-bottom flex justify-center items-center  hover:text-pink-400 my-4">
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn m-1 bg-[#23BE0A] text-xl hover:bg-pink-400  text-white "
           >
-            <a>Rating (Ascending)</a>
-          </li>
-        </ul>
+            {sortByOption ? `Sort By: ${sortByOption}` : "Sort By"}
+          </div>
+          <ul
+            tabIndex={0}
+            className="dropdown-content menu bg-base-100 rounded-box z-[1] text-md w-52 p-2 shadow border-2 border-pink-300"
+          >
+            <li onClick={() => totalPagesAscSort("Total Pages Ascending")}>
+              <a>Total Pages (Ascending)</a>
+            </li>
+
+            <li
+              onClick={() => ratingAscSort("Rating Ascending")}
+              className="border-t-2 border-pink-400"
+            >
+              <a>Rating (Ascending)</a>
+            </li>
+          </ul>
+        </div>
       </div>
 
       {/* tabs containers */}
@@ -109,23 +102,26 @@ const ListedBooks = () => {
         </TabList>
 
         <TabPanel>
-          <h2 className="text-lg">
-            {" "}
+          <h2 className="text-md md:text-lg">
             <b>Read Books</b> : {readBooksList.length}
           </h2>
-          {/* daisu ui card with badge */}
-          {readBooksList.map((book) => (
-            <BookDataInTab key={book.bookId} book={book}></BookDataInTab>
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-2 place-items-center ">
+            {/* daisu ui card with badge */}
+            {readBooksList.map((book) => (
+              <BookDataInTab key={book.bookId} book={book}></BookDataInTab>
+            ))}
+          </div>
         </TabPanel>
         <TabPanel>
-          <h2 className="text-lg">
+          <h2 className="text-md md:text-lg">
             <b>Wish List Books</b>: {wishListBooks.length}
           </h2>
-          {/* daisu ui card with badge */}
-          {wishListBooks.map((book) => (
-            <BookDataInTab key={book.bookId} book={book}></BookDataInTab>
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-2 place-items-center">
+            {/* daisu ui card with badge */}
+            {wishListBooks.map((book) => (
+              <BookDataInTab key={book.bookId} book={book}></BookDataInTab>
+            ))}
+          </div>
         </TabPanel>
       </Tabs>
     </div>
